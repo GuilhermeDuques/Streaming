@@ -40,6 +40,7 @@ public class BandaController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Banda> create(@RequestBody Banda banda) {
         this.bandaService.create(banda);
         return new ResponseEntity<>(banda, HttpStatus.CREATED);
